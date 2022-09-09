@@ -1,0 +1,29 @@
+{
+  "name": "blue-music-be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -r @swc-node/register src/server.ts",
+    "test": "jest",
+    "server": "node -r @swc-node/register src/server.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "address": "^1.1.2",
+    "axios": "^0.27.2",
+    "express": "^4.18.1",
+    "http-proxy-middleware": "^2.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  },
+  "devDependencies": {
+    "@swc-node/jest": "^1.5.2",
+    "@swc-node/register": "^1.5.1",
+    "@types/jest": "^29.0.0",
+    "jest": "^29.0.2",
+    "nodemon": "^2.0.19"
+  }
+}

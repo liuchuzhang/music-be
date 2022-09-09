@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "strict": true,
+    "moduleResolution": "node",
+    "module": "CommonJS",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["node"]
+  },
+  "include": ["*.ts", "./**/*.ts"],
+  "exclude": ["node_modules"]
+}

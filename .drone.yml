@@ -1,0 +1,43 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: test
+  image: 18-alpine3.15
+  commands:
+    - yarn
+    - yarn test
+
+- name: docker-build
+  image: plugins/docker
+  settings:
+    repo: liuchuzhang/blue-music-be
+    tags: latest
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+
+- name: deploy
+  image: appleboy/drone-ssh
+  environment:
+    SSH_DEPLOY_SHELL:
+      from_secret: ssh_deploy_shell
+  settings:
+    host:
+      from_secret: ssh_host
+    port:
+      from_secret: ssh_port
+    username:
+      from_secret: ssh_username
+    password:
+      from_secret: ssh_password
+    envs:
+      - ssh_deploy_shell
+    script:
+      - $SSH_DEPLOY_SHELL -d music -e liuchuzhang/blue-music-be -i music-be -p 4001 -u /api
+
+trigger:
+  branch:
+    - main
