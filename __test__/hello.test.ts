@@ -1,5 +1,12 @@
 import axios from 'axios'
-import { stopServer } from './helpers/server'
+import { stopServer, startServer } from './helpers/server'
+
+let origin: string
+
+beforeAll(async () => {
+  const port = await startServer()
+  origin = `http://localhost:${port}`
+})
 
 afterAll(() => {
   stopServer()
@@ -7,7 +14,7 @@ afterAll(() => {
 
 describe('hello', () => {
   it('world', async () => {
-    const res = await axios.get('http://localhost:4001/api/hello/world')
-    expect(1 + 199).toEqual(200)
+    const res = await axios.get(`${origin}/api/hello/world`)
+    expect(res.status).toEqual(200)
   })
 })

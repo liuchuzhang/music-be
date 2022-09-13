@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY ["package.json", "pnpm-lock.yaml*", "./"]
 
-RUN pnpm intall
+RUN pnpm install
 
 COPY . .
 
