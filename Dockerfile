@@ -1,14 +1,14 @@
 
-FROM node:18-alpine3.15
+FROM liuchuzhang/node-pnpm:latest
 ENV NODE_ENV=production
 
 WORKDIR /app
 
-COPY ["package.json", "yarn.lock*", "./"]
+COPY ["package.json", "pnpm-lock.yaml*", "./"]
 
-RUN yarn
+RUN pnpm intall
 
 COPY . .
 
 EXPOSE 4001
-CMD ["yarn", "server"]
+CMD ["pnpm", "run", "server"]

@@ -3,5 +3,5 @@
 ## Usage
 
 ```shell
-  yarn && yarn dev
+  pnpm install && pnpm run dev
 ```

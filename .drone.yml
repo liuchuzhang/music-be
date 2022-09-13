@@ -4,10 +4,10 @@ name: default
 
 steps:
 - name: test
-  image: 18-alpine3.15
+  image: liuchuzhang/node-pnpm
   commands:
-    - yarn
-    - yarn test
+    - pnpm install
+    - pnpm run test
 
 - name: docker-build
   image: plugins/docker
