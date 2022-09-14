@@ -13,10 +13,11 @@ afterAll(() => {
 })
 
 describe('proxy', () => {
-  it('kuwo', async () => {
-    const res = await axios.get(`${origin}/api/kuwo`)
-    expect(res.status).toEqual(200)
-  })
+  // kuwo 国外 IP (Github Actions)不能访问
+  // it('kuwo', async () => {
+  //   const res = await axios.get(`${origin}/api/kuwo`)
+  //   expect(res.status).toEqual(200)
+  // })
 
   it('163', async () => {
     const res = await axios.get(`${origin}/api/music163/api/artist/10559`)

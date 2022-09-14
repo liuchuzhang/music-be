@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon -r @swc-node/register src/server.ts",
-    "test": "jest --coverage --silent",
+    "test": "jest --runInBand --coverage --silent",
     "server": "node -r @swc-node/register src/server.ts"
   },
   "author": "",

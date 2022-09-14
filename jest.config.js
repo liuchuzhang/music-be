@@ -3,6 +3,7 @@ module.exports = {
   transform: {
     '^.+\\.(t|j)sx?$': ['@swc-node/jest'],
   },
+  testTimeout: 20000,
   globals: {
     "ts-jest": {
       tsconfig: "tsconfig.test.json",
