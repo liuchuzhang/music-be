@@ -53,5 +53,9 @@ export const proxyList: ProxyItem[] = [
   {
     prefix: '/appcnfmigu',
     target: 'https://app.c.nf.migu.cn'
+  },
+  {
+    prefix: '/wwwapikugou',
+    target: 'https://wwwapi.kugou.com'
   }
 ]
